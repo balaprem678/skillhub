@@ -7,9 +7,9 @@ import { courses, site } from "@/data/site";
 export const Route = createFileRoute("/courses")({
   head: () => ({
     meta: [
-      { title: "All Courses — Ambattur Skill Hub, Chennai" },
-      { name: "description", content: "Full course list at Ambattur Skill Hub: AI digital marketing, website development, graphic design & video editing, corporate PPT design, office secretariat, medical coding and fire & safety officer training." },
-      { property: "og:title", content: "All Courses — Ambattur Skill Hub, Chennai" },
+      { title: "All Courses — Skill Hub, Chennai" },
+      { name: "description", content: "Full course list at Skill Hub: AI digital marketing, website development, graphic design & video editing, corporate PPT design, office secretariat, medical coding and fire & safety officer training." },
+      { property: "og:title", content: "All Courses — Skill Hub, Chennai" },
       { property: "og:description", content: "7 running skill courses plus new batches coming soon. Offline & online, 3–6 months, placement assistance." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -39,7 +39,7 @@ function CoursesPage() {
           </span>
           <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl">
             All courses at{" "}
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-hero)" }}>Ambattur Skill Hub</span>
+            <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-hero)" }}>Skill Hub</span>
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground">
             Seven job-oriented programmes running now, plus new batches launching soon. Offline & online, regular & weekend, 3–6 months.

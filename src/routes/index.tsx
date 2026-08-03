@@ -11,9 +11,9 @@ import { courses, site } from "@/data/site";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Ambattur Skill Hub — Skill-Based Career Courses in Chennai" },
+      { title: "Skill Hub — Skill-Based Career Courses in Chennai" },
       { name: "description", content: "Job-oriented skill courses in Ambattur, Chennai: AI digital marketing, web development, graphic design & video editing, PPT design, office secretariat, medical coding, fire & safety. 100% placement assistance." },
-      { property: "og:title", content: "Ambattur Skill Hub — Skill-Based Career Courses in Chennai" },
+      { property: "og:title", content: "Skill Hub — Skill-Based Career Courses in Chennai" },
       { property: "og:description", content: "Offline & online batches, 3–6 months, live project internship, industry-recognized certificate and 100% placement assistance. Admissions open now." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -88,7 +88,7 @@ function Index() {
               A skill training centre built for real jobs, not just certificates
             </h2>
             <p className="mt-5 text-muted-foreground">
-              Ambattur Skill Hub trains students and job seekers in Chennai with practical, industry-mapped
+              Skill Hub trains students and job seekers in Chennai with practical, industry-mapped
               digital and professional skills. Every course is delivered by working mentors, taught on live
               projects, and backed by placement support — so you finish job-ready, not just course-completed.
             </p>
@@ -170,7 +170,7 @@ function Index() {
       <section id="why" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="text-center">
           <span className="text-sm font-semibold uppercase tracking-wider text-primary">Why choose us</span>
-          <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">Why Ambattur Skill Hub?</h2>
+          <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">Why Skill Hub?</h2>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {why.map((w) => (

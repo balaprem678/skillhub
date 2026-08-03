@@ -77,10 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ambattur Skill Hub — Skill-Based Career Courses in Chennai" },
+      { title: "Skill Hub — Skill-Based Career Courses in Chennai" },
       { name: "description", content: "Job-oriented digital and professional skill courses in Ambattur, Chennai. Offline & online batches, live project internship, certificate and 100% placement assistance." },
-      { property: "og:title", content: "Ambattur Skill Hub — Skill-Based Career Courses in Chennai" },
-      { property: "og:description", content: "Learn Skills. Build Confidence. Launch Your Career. Admissions open now at Ambattur Skill Hub, Chennai." },
+      { property: "og:title", content: "Skill Hub — Skill-Based Career Courses in Chennai" },
+      { property: "og:description", content: "Learn Skills. Build Confidence. Launch Your Career. Admissions open now at Skill Hub, Chennai." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

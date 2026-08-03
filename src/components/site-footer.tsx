@@ -1,6 +1,7 @@
 import { Flame, Facebook, Instagram, Linkedin, Youtube, Mail, Phone, MapPin, Globe } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { site, courses } from "@/data/site";
+import { Images } from "@/utilis/Images";
 
 export function SiteFooter() {
   return (
@@ -9,9 +10,8 @@ export function SiteFooter() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1.2fr]">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="grid h-10 w-10 place-items-center rounded-xl" style={{ background: "var(--gradient-primary)" }}>
-                <Flame className="h-5 w-5 text-primary-foreground" />
-              </span>
+              <img src={Images.logo} alt="Skill Hub Logo" width={80} />
+
               <span className="leading-tight">
                 <span className="block font-display text-lg font-extrabold">{site.name}</span>
                 <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-background/60">{site.tagline}</span>
