@@ -64,7 +64,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div className="border-t border-border bg-background lg:hidden absolute text-center w-full">
           <nav className="flex flex-col gap-1 px-4 py-4">
             {navItems.map((item) =>
               item.route ? (
