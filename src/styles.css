@@ -1,0 +1,79 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-tamil: "Noto Sans Tamil", "Manrope", ui-sans-serif, sans-serif;
+}
+
+:root {
+  --radius: 0.875rem;
+  --background: oklch(0.99 0.005 200);
+  --foreground: oklch(0.19 0.035 220);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.035 220);
+  --primary: oklch(0.52 0.11 205);
+  --primary-foreground: oklch(0.99 0 0);
+  --primary-glow: oklch(0.66 0.13 190);
+  --secondary: oklch(0.96 0.015 205);
+  --secondary-foreground: oklch(0.21 0.04 220);
+  --accent: oklch(0.75 0.17 62);
+  --accent-foreground: oklch(0.16 0.03 220);
+  --muted: oklch(0.96 0.01 205);
+  --muted-foreground: oklch(0.5 0.02 220);
+  --border: oklch(0.91 0.012 205);
+  --ring: oklch(0.52 0.11 205);
+
+  --gradient-hero: linear-gradient(120deg, oklch(0.8 0.15 70) 0%, oklch(0.78 0.16 55) 45%, oklch(0.72 0.13 185) 100%);
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--primary-glow));
+  --gradient-accent: linear-gradient(135deg, oklch(0.75 0.17 62), oklch(0.68 0.19 35));
+  --gradient-soft: linear-gradient(180deg, oklch(0.97 0.02 200) 0%, oklch(0.99 0.005 200) 100%);
+  --shadow-elegant: 0 20px 60px -20px color-mix(in oklab, var(--primary) 40%, transparent);
+  --shadow-card: 0 8px 30px -12px color-mix(in oklab, var(--primary) 18%, transparent);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-fade-in {
+  animation: fade-in 0.6s ease-out both;
+}
+
