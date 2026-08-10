@@ -9,12 +9,12 @@ import cFireSafety from "@/assets/c-fire-safety.png";
 export const site = {
   name: "Skill Hub",
   tagline: "Skill-Based Career Courses",
-  phone: "+91 XXXXX XXXXX",
-  mobile: "+91 XXXXX XXXXX",
-  whatsapp: "+91 XXXXX XXXXX",
-  email: "info@yourwebsite.com",
-  website: "www.yourwebsite.com",
-  address: "No. XX, Ambattur, Chennai – 6000XX",
+  phone: "+91 72990 77779",
+  mobile: "+91 72990 77779",
+  whatsapp: "+91 72990 77779",
+  email: "skillhub.call@gmail.com",
+  website: "http://bharathiskillhub.com",
+  address: "29 GNG, Colony, 2nd St, Varadaraja Puram, Ambattur, Chennai – 600 053",
 };
 
 export const courses = [
