@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { site, courses } from "@/data/site";
 import { Images } from "@/utilis/Images";
 
+
 export function SiteFooter() {
   return (
     <footer id="contact" className="border-t border-border bg-foreground text-background">
@@ -37,7 +38,7 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-3">
               {courses.map((c) => (
                 <li key={c.title}>
-                  <Link to="/courses" className="text-sm text-background/80 transition-colors hover:text-background">{c.title}</Link>
+                  <Link to="/courses/$slug" params={{ slug: c.slug }} className="text-sm text-background/80 transition-colors hover:text-background">{c.title}</Link>
                 </li>
               ))}
             </ul>
@@ -48,7 +49,7 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-4 text-sm text-background/80">
               <li className="flex gap-3"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><span>{site.name}<br />{site.address}</span></li>
               <li className="flex gap-3"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><span>Call / WhatsApp: {site.whatsapp}<br />Mobile: {site.mobile}</span></li>
-              <li className="flex gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><a href={`mailto:${site.email}`} className="hover:text-background">{site.email}</a></li>
+              <li className="flex gap-3"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><a target="_blank" href={`mailto:${site.email}`} className="hover:text-background">{site.email}</a></li>
               <li className="flex gap-3"><Globe className="mt-0.5 h-4 w-4 shrink-0 text-accent" /><span>{site.website}</span></li>
             </ul>
           </div>
