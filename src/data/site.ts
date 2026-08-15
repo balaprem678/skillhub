@@ -4,7 +4,7 @@ import cGraphicVideo from "@/assets/c-graphic-video.jpg";
 import cPpt from "@/assets/c-ppt.jpg";
 import cOffice from "@/assets/c-office.jpg";
 import cMedicalCoding from "@/assets/c-medical-coding.jpg";
-import cFireSafety from "@/assets/c-fire-safety.jpg";
+import cFireSafety from "@/assets/c-fire-safety.png";
 
 export const site = {
   name: "Skill Hub",
