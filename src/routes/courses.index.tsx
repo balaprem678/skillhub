@@ -4,7 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { courses, site } from "@/data/site";
 
-export const Route = createFileRoute("/courses")({
+export const Route = createFileRoute("/courses/")({
   head: () => ({
     meta: [
       { title: "All Courses — Skill Hub, Chennai" },
@@ -73,7 +73,7 @@ function CoursesPage() {
                 </ul>
                 <div className="mt-auto flex items-center justify-between border-t border-border pt-4 text-xs text-muted-foreground">
                   <span className="inline-flex items-center gap-1.5"><Laptop className="h-3.5 w-3.5" /> {c.mode}</span>
-                  <Link to="/" hash="admission" className="text-sm font-semibold text-primary hover:underline">Enroll →</Link>
+                  <Link to="/courses/$slug" params={{ slug: c.slug }} className="text-sm font-semibold text-primary hover:underline">View details →</Link>
                 </div>
               </div>
             </article>

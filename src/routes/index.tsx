@@ -149,7 +149,7 @@ function Index() {
                   </ul>
                   <div className="mt-5 flex items-center justify-between border-t border-border pt-4 text-xs text-muted-foreground">
                     <span className="inline-flex items-center gap-1.5"><Laptop className="h-3.5 w-3.5" /> {c.mode}</span>
-                    <a href="#admission" className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">Enquire <ArrowRight className="h-3.5 w-3.5" /></a>
+                    <Link to="/courses/$slug" params={{ slug: c.slug }} className="inline-flex items-center gap-1 text-sm font-semibold text-primary hover:underline">View details <ArrowRight className="h-3.5 w-3.5" /></Link>
                   </div>
                 </div>
               </article>
