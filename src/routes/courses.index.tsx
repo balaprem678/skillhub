@@ -55,7 +55,7 @@ function CoursesPage() {
         <h2 className="font-display text-2xl font-bold sm:text-3xl">Courses offered now</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {courses.map((c, i) => (
-            <Link key={c.title} to="/courses/$slug" params={{ slug: c.slug }} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1" style={{ boxShadow: "var(--shadow-card)" }}>
+            <article key={c.title} className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:-translate-y-1" style={{ boxShadow: "var(--shadow-card)" }}>
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img src={c.img} alt={c.title} width={1200} height={750} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
@@ -76,7 +76,7 @@ function CoursesPage() {
                   <Link to="/courses/$slug" params={{ slug: c.slug }} className="text-sm font-semibold text-primary hover:underline">View details →</Link>
                 </div>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
       </section>
