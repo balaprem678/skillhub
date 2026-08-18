@@ -8,7 +8,7 @@ export const Route = createFileRoute("/courses/")({
   head: () => ({
     meta: [
       { title: "All Courses — Skill Hub, Chennai" },
-      { name: "description", content: "Full course list at Skill Hub: AI digital marketing, website development, graphic design & video editing, corporate PPT design, office secretariat, medical coding and fire & safety officer training." },
+      { name: "description", content: "Full course list at Skill Hub: AI digital marketing, website development, graphic design & video editing, corporate PPT design, Office secretaryship, medical coding and fire & safety officer training." },
       { property: "og:title", content: "All Courses — Skill Hub, Chennai" },
       { property: "og:description", content: "7 running skill courses plus new batches coming soon. Offline & online, 3–6 months, placement assistance." },
       { property: "og:type", content: "website" },

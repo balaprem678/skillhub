@@ -75,7 +75,7 @@ export const courses = [
     topics: ["Slide Storytelling", "Data Charts", "Animation", "Templates"],
   },
   {
-    title: "Office Secretariat",
+    title: "Office secretaryship",
     slug: "office-secretariat",
     fee: "₹12,000",
     syllabus: ["MS Word advanced documentation", "MS Excel: formulas, pivot, dashboards", "MS PowerPoint for office reporting", "Tally basics & billing entries", "Business email & phone etiquette", "Filing, records & inventory register", "Front-office & visitor management", "Interview & resume preparation"],

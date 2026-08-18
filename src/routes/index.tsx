@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Skill Hub — Skill-Based Career Courses in Chennai" },
-      { name: "description", content: "Job-oriented skill courses in Ambattur, Chennai: AI digital marketing, web development, graphic design & video editing, PPT design, office secretariat, medical coding, fire & safety. 100% placement assistance." },
+      { name: "description", content: "Job-oriented skill courses in Ambattur, Chennai: AI digital marketing, web development, graphic design & video editing, PPT design, Office secretaryship, medical coding, fire & safety. 100% placement assistance." },
       { property: "og:title", content: "Skill Hub — Skill-Based Career Courses in Chennai" },
       { property: "og:description", content: "Offline & online batches, 3–6 months, live project internship, industry-recognized certificate and 100% placement assistance. Admissions open now." },
       { property: "og:type", content: "website" },
