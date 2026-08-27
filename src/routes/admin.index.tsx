@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Users, UserCheck, UserPlus, Clock, ArrowRight, RefreshCw, Mail, CheckCircle2 } from "lucide-react";
-import { getEnquiriesFn } from "@/lib/server/api";
+import { getEnquiriesFn } from "@/lib/api";
 
 export const Route = createFileRoute("/admin/")({
   component: AdminDashboardOverview,

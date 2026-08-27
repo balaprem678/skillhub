@@ -9,7 +9,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { HeroSlider } from "@/components/hero-slider";
 import { courses, site } from "@/data/site";
-import { submitEnquiryFn } from "@/lib/server/api";
+import { submitEnquiryFn } from "@/lib/api";
 
 export const Route = createFileRoute("/")({
   head: () => ({

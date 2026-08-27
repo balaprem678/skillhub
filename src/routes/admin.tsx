@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {
   LayoutDashboard, Users, Settings, LogOut, Menu, X, ShieldCheck, GraduationCap, ExternalLink,
 } from "lucide-react";
-import { getAdminSessionFn } from "@/lib/server/api";
+import { getAdminSessionFn } from "@/lib/api";
 
 export const Route = createFileRoute("/admin")({
   component: AdminLayout,

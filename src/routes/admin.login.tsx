@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { GraduationCap, Lock, User, Eye, EyeOff, ArrowRight } from "lucide-react";
-import { adminLoginFn } from "@/lib/server/api";
+import { adminLoginFn } from "@/lib/api";
 
 export const Route = createFileRoute("/admin/login")({
   component: AdminLogin,

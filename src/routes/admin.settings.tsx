@@ -21,7 +21,7 @@ import {
   updateSettingsFn,
   sendTestEmailActionFn,
   updateAdminPasswordFn,
-} from "@/lib/server/api";
+} from "@/lib/api";
 
 export const Route = createFileRoute("/admin/settings")({
   component: AdminSettingsPage,

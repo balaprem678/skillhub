@@ -3,7 +3,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import {
   Search, Filter, Download, Trash2, Edit3, X, Check, Phone, Calendar, BookOpen, Clock, MessageSquare, AlertCircle
 } from "lucide-react";
-import { getEnquiriesFn, updateEnquiryStatusFn, deleteEnquiryFn } from "@/lib/server/api";
+import { getEnquiriesFn, updateEnquiryStatusFn, deleteEnquiryFn } from "@/lib/api";
 
 export const Route = createFileRoute("/admin/enquiries")({
   component: AdminEnquiriesModule,
