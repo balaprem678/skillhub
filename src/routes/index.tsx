@@ -1,12 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   ArrowRight, Award, BadgeCheck, BriefcaseBusiness, CalendarClock, CheckCircle2, Clock,
   GraduationCap, Laptop, Mail, MapPin, MessageCircle, Phone, Quote, Users, Sparkles, Globe,
+  AlertCircle, CheckCircle, Loader2
 } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { HeroSlider } from "@/components/hero-slider";
 import { courses, site } from "@/data/site";
+import { submitEnquiryFn } from "@/lib/server/api";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,6 +55,41 @@ const faqs = [
 ];
 
 function Index() {
+  const [fullName, setFullName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [selectedCourse, setSelectedCourse] = useState(courses[0]?.title || "AI Digital Marketing Mastery");
+  const [preferredMode, setPreferredMode] = useState("Offline — Ambattur centre");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+
+  const handleSubmitEnquiry = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!fullName.trim() || !phone.trim()) return;
+    setIsSubmitting(true);
+    setSubmitMessage(null);
+
+    try {
+      const res = await submitEnquiryFn({
+        data: {
+          fullName: fullName.trim(),
+          phone: phone.trim(),
+          course: selectedCourse,
+          mode: preferredMode,
+        },
+      });
+      setSubmitMessage({ type: "success", text: res.message });
+      setFullName("");
+      setPhone("");
+    } catch (err: any) {
+      setSubmitMessage({
+        type: "error",
+        text: err.message || "Failed to submit enquiry. Please call us directly.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -251,36 +289,88 @@ function Index() {
             </div>
           </div>
 
-          <form className="rounded-2xl bg-secondary/50 p-6" onSubmit={(e) => e.preventDefault()}>
+          <form className="rounded-2xl bg-secondary/50 p-6 space-y-4" onSubmit={handleSubmitEnquiry}>
             <h3 className="font-display text-lg font-bold">Book a free career counselling</h3>
-            <div className="mt-5 space-y-4">
-              <div>
-                <label htmlFor="name" className="text-xs font-semibold text-muted-foreground">Full name</label>
-                <input id="name" required className="mt-1.5 w-full rounded-xl border border-border bg-card px-4 py-2.5 text-sm outline-none focus:border-primary" placeholder="Your name" />
+            
+            {submitMessage && (
+              <div
+                className={`flex items-start gap-2.5 rounded-xl p-3 text-xs font-medium ${
+                  submitMessage.type === "success"
+                    ? "border border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300"
+                    : "border border-rose-500/30 bg-rose-500/10 text-rose-700 dark:text-rose-300"
+                }`}
+              >
+                {submitMessage.type === "success" ? (
+                  <CheckCircle className="h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400 mt-0.5" />
+                ) : (
+                  <AlertCircle className="h-4 w-4 shrink-0 text-rose-600 dark:text-rose-400 mt-0.5" />
+                )}
+                <span>{submitMessage.text}</span>
               </div>
-              <div>
-                <label htmlFor="phone" className="text-xs font-semibold text-muted-foreground">Mobile number</label>
-                <input id="phone" type="tel" required className="mt-1.5 w-full rounded-xl border border-border bg-card px-4 py-2.5 text-sm outline-none focus:border-primary" placeholder="+91" />
-              </div>
-              <div>
-                <label htmlFor="course" className="text-xs font-semibold text-muted-foreground">Course interested in</label>
-                <select id="course" className="mt-1.5 w-full rounded-xl border border-border bg-card px-4 py-2.5 text-sm outline-none focus:border-primary">
-                  {courses.map((c) => <option key={c.title}>{c.title}</option>)}
-                </select>
-              </div>
-              <div>
-                <label htmlFor="mode" className="text-xs font-semibold text-muted-foreground">Preferred mode</label>
-                <select id="mode" className="mt-1.5 w-full rounded-xl border border-border bg-card px-4 py-2.5 text-sm outline-none focus:border-primary">
-                  <option>Offline — Ambattur centre</option>
-                  <option>Online live classes</option>
-                  <option>Weekend batch</option>
-                </select>
-              </div>
-              <button className="w-full rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground" style={{ background: "var(--gradient-primary)" }}>
-                Request callback
-              </button>
-              <p className="text-center text-xs text-muted-foreground">We'll call you back within 24 hours.</p>
+            )}
+
+            <div>
+              <label htmlFor="name" className="text-xs font-semibold text-muted-foreground">Full name</label>
+              <input
+                id="name"
+                required
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                className="mt-1.5 w-full rounded-xl border border-border bg-card px-4 py-2.5 text-sm outline-none focus:border-primary"
+                placeholder="Your name"
+              />
             </div>
+            <div>
+              <label htmlFor="phone" className="text-xs font-semibold text-muted-foreground">Mobile number</label>
+              <input
+                id="phone"
+                type="tel"
+                required
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="mt-1.5 w-full rounded-xl border border-border bg-card px-4 py-2.5 text-sm outline-none focus:border-primary"
+                placeholder="+91 98765 43210"
+              />
+            </div>
+            <div>
+              <label htmlFor="course" className="text-xs font-semibold text-muted-foreground">Course interested in</label>
+              <select
+                id="course"
+                value={selectedCourse}
+                onChange={(e) => setSelectedCourse(e.target.value)}
+                className="mt-1.5 w-full rounded-xl border border-border bg-card px-4 py-2.5 text-sm outline-none focus:border-primary"
+              >
+                {courses.map((c) => <option key={c.title}>{c.title}</option>)}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="mode" className="text-xs font-semibold text-muted-foreground">Preferred mode</label>
+              <select
+                id="mode"
+                value={preferredMode}
+                onChange={(e) => setPreferredMode(e.target.value)}
+                className="mt-1.5 w-full rounded-xl border border-border bg-card px-4 py-2.5 text-sm outline-none focus:border-primary"
+              >
+                <option>Offline — Ambattur centre</option>
+                <option>Online live classes</option>
+                <option>Weekend batch</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground transition-all disabled:opacity-50 inline-flex items-center justify-center gap-2"
+              style={{ background: "var(--gradient-primary)" }}
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" /> Submitting...
+                </>
+              ) : (
+                "Request callback"
+              )}
+            </button>
+            <p className="text-center text-xs text-muted-foreground">We'll call you back within 24 hours.</p>
           </form>
         </div>
       </section>
