@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const MONGODB_URI =
-  process.env.MONGODB_URI ||
-  "mongodb+srv://skillhubcall_db_user:16keB0UA71H5oPKv@skillhub.87bmm3p.mongodb.net/skillhub?retryWrites=true&w=majority";
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/skillhub";
+
 
 interface MongooseCache {
   conn: typeof mongoose | null;
