@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { GraduationCap, Lock, User, Eye, EyeOff, ArrowRight } from "lucide-react";
 import { adminLoginFn } from "@/lib/api";
+import { Images } from "@/utilis/Images";
 
 export const Route = createFileRoute("/admin/login")({
   component: AdminLogin,
@@ -40,8 +41,9 @@ function AdminLogin() {
     <div className="flex min-h-screen items-center justify-center bg-slate-950 px-4 py-12 font-sans text-slate-100">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
-          <div className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-500 to-teal-700 shadow-xl shadow-teal-500/20">
-            <GraduationCap className="h-9 w-9 text-white" />
+          <div className="inline-flex h-16 w-16 items-center justify-center rounded-full">
+            {/* <GraduationCap className="h-9 w-9 text-white" /> */}
+            <img src={Images.logo} alt="SkillHub Logo" />
           </div>
           <h1 className="mt-4 font-display text-2xl font-bold tracking-tight text-white sm:text-3xl">
             SkillHub Admin Login
