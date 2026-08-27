@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/skillhub";
+const MONGODB_URI =
+  process.env.MONGODB_URI ||
+  "mongodb+srv://skillhubcall_db_user:16keB0UA71H5oPKv@skillhub.87bmm3p.mongodb.net/skillhub?retryWrites=true&w=majority";
 
 interface MongooseCache {
   conn: typeof mongoose | null;
@@ -28,10 +30,10 @@ export async function connectToDatabase(): Promise<typeof mongoose> {
     };
 
     cached.promise = mongoose.connect(MONGODB_URI, opts).then((m) => {
-      console.log("Connected to MongoDB successfully:", MONGODB_URI);
+      console.log("Connected to MongoDB Cloud Atlas successfully.");
       return m;
     }).catch((err) => {
-      console.error("MongoDB Connection Error:", err);
+      console.error("MongoDB Cloud Atlas Connection Error:", err);
       cached.promise = null;
       throw err;
     });
