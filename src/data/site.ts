@@ -5,6 +5,10 @@ import cPpt from "@/assets/c-ppt.jpg";
 import cOffice from "@/assets/c-office.jpg";
 import cMedicalCoding from "@/assets/c-medical-coding.jpg";
 import cFireSafety from "@/assets/c-fire-safety.png";
+import cCyberSecurity from "@/assets/c-cyber-security.svg";
+import cCpbfI from "@/assets/c-cpbfi.svg";
+import cBankingFinance from "@/assets/c-banking-finance.svg";
+import cMontessori from "@/assets/c-montessori.svg";
 
 export const site = {
   name: "Skill Hub",
@@ -101,6 +105,62 @@ export const courses = [
     mode: "Offline & Online",
     desc: "ICD-10-CM, CPT and HCPCS coding with anatomy fundamentals plus CPC certification exam preparation.",
     topics: ["ICD-10-CM", "CPT & HCPCS", "Anatomy Basics", "CPC Prep"],
+  },
+  {
+    title: "Cyber Security",
+    slug: "cyber-security",
+    fee: "Contact us",
+    syllabus: ["Cybersecurity fundamentals", "Network security basics", "Threats and vulnerability awareness", "Security tools and monitoring concepts", "Ethical security testing fundamentals", "Incident response and security best practices"],
+    jobs: ["Cybersecurity Analyst", "SOC Analyst", "Information Security Assistant"],
+    eligibility: ["Contact us for eligibility details"],
+    ta: "சைபர் செக்யூரிட்டி",
+    img: cCyberSecurity,
+    duration: "Contact us",
+    mode: "Offline & Online",
+    desc: "Explore cybersecurity fundamentals, network protection, threat awareness and incident response practices.",
+    topics: ["Network Security", "Threat Awareness", "Security Basics", "Incident Response"],
+  },
+  {
+    title: "CPBFI — Banking, Finance & Insurance",
+    slug: "cpbfi-banking-finance-insurance",
+    fee: "Contact us",
+    syllabus: ["Banking and financial services fundamentals", "Introduction to insurance products", "Customer service and communication", "Financial product awareness", "Banking documentation and processes", "Professional and workplace skills"],
+    jobs: ["Banking Associate", "Financial Services Executive", "Insurance Associate", "Customer Relationship Executive"],
+    eligibility: ["Contact us for eligibility details"],
+    ta: "சிபிஎஃப்பிஐ — வங்கி, நிதி & காப்பீடு",
+    img: cCpbfI,
+    duration: "Contact us",
+    mode: "Offline & Online",
+    desc: "Build foundational knowledge of banking, financial services and insurance, along with customer service and workplace skills.",
+    topics: ["Banking", "Finance", "Insurance", "Customer Service"],
+  },
+  {
+    title: "Banking & Finance",
+    slug: "banking-finance",
+    fee: "Contact us",
+    syllabus: ["Banking operations and services", "Financial products and payments", "Introduction to lending and credit", "Customer onboarding and documentation", "Digital banking fundamentals", "Professional communication and service"],
+    jobs: ["Banking Operations Assistant", "Finance Executive", "Loan Processing Assistant", "Customer Service Associate"],
+    eligibility: ["Contact us for eligibility details"],
+    ta: "வங்கி & நிதி",
+    img: cBankingFinance,
+    duration: "Contact us",
+    mode: "Offline & Online",
+    desc: "Learn the fundamentals of banking operations, financial products, digital payments and customer service.",
+    topics: ["Banking Operations", "Financial Products", "Digital Payments", "Customer Service"],
+  },
+  {
+    title: "Montessori Teacher Training",
+    slug: "montessori-teacher-training",
+    fee: "Contact us",
+    syllabus: ["Child development and early learning", "Montessori philosophy and principles", "Practical life learning activities", "Sensorial materials and classroom use", "Language and numeracy foundations", "Classroom planning and observation"],
+    jobs: ["Montessori Teacher", "Preschool Teacher", "Early Childhood Educator", "Classroom Assistant"],
+    eligibility: ["Contact us for eligibility details"],
+    ta: "மாண்டிசோரி ஆசிரியர் பயிற்சி",
+    img: cMontessori,
+    duration: "Contact us",
+    mode: "Offline & Online",
+    desc: "Discover Montessori principles, child development and practical classroom activities for early childhood learning.",
+    topics: ["Child Development", "Montessori Methods", "Classroom Practice", "Early Learning"],
   },
   {
     title: "Fire & Safety Officer",

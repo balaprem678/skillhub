@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Skill Hub — Skill-Based Career Courses in Chennai" },
-      { name: "description", content: "Job-oriented skill courses in Ambattur, Chennai: AI digital marketing, web development, graphic design & video editing, PPT design, Office Secretaryship, medical coding, fire & safety. 100% placement assistance." },
+      { name: "description", content: "Job-oriented skill courses in Ambattur, Chennai: digital marketing, web development, cyber security, banking and finance, medical coding, Montessori teacher training and more. 100% placement assistance." },
       { property: "og:title", content: "Skill Hub — Skill-Based Career Courses in Chennai" },
       { property: "og:description", content: "Offline & online batches, 3–6 months, live project internship, industry-recognized certificate and 100% placement assistance. Admissions open now." },
       { property: "og:type", content: "website" },
@@ -99,7 +99,7 @@ function Index() {
       <section className="mx-auto -mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative z-10 grid gap-4 rounded-3xl border border-border bg-card p-6 sm:grid-cols-2 lg:grid-cols-4" style={{ boxShadow: "var(--shadow-card)" }}>
           {[
-            { icon: GraduationCap, n: "7", l: "Career Courses" },
+            { icon: GraduationCap, n: String(courses.length), l: "Career Courses" },
             { icon: Clock, n: "3–6", l: "Months Duration" },
             { icon: Laptop, n: "Offline + Online", l: "Class Modes" },
             { icon: Award, n: "100%", l: "Placement Assistance" },
@@ -161,7 +161,7 @@ function Index() {
             <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold text-primary">
               <Sparkles className="h-3.5 w-3.5" /> Courses Offered
             </span>
-            <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl">7 job-oriented career courses</h2>
+            <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl">{courses.length} job-oriented career courses</h2>
             <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
               Every programme includes live project internship, industry-recognized certification and placement assistance.
             </p>

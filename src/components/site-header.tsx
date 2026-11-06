@@ -17,7 +17,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/85 backdrop-blur-lg">
       <div className="hidden bg-foreground py-2 text-xs text-background md:block">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex w-full max-w-screen-2xl items-center justify-between px-3 sm:px-4 lg:px-6 xl:px-8">
           <span>{site.address}</span>
           <span className="flex items-center gap-5">
             <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="hover:text-accent">📞 {site.phone}</a>
@@ -26,7 +26,7 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-18 w-full max-w-screen-2xl items-center justify-between px-3 sm:px-4 lg:px-6 xl:px-8">
         <Link to="/" className="flex items-center gap-2.5">
           <img src={Images.logo} alt="Skill Hub Logo" width={80} />
 
@@ -63,7 +63,7 @@ export function SiteHeader() {
 
       {open && (
         <div className="border-t border-border bg-background lg:hidden">
-          <nav className="flex flex-col gap-1 px-4 py-4">
+          <nav className="flex flex-col gap-1 px-3 py-4 sm:px-4">
             {navItems.map((item) =>
               item.route ? (
                 <Link key={item.href} to={item.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground/80 hover:bg-secondary">

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="90" y1="0" x2="1060" y2="750" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17335B"/>
+      <stop offset="1" stop-color="#247E8D"/>
+    </linearGradient>
+    <linearGradient id="card" x1="493" y1="213" x2="942" y2="506" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE7A6"/>
+      <stop offset="1" stop-color="#F3B857"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1200v750H0z"/>
+  <circle cx="1001" cy="94" r="240" fill="#D7FFF4" fill-opacity=".08"/>
+  <circle cx="123" cy="683" r="239" fill="#FFC56D" fill-opacity=".12"/>
+  <path d="m166 325 206-137 206 137H166Z" fill="#E4F6F1"/>
+  <path d="M205 345h334v248H205z" fill="#F8FBF6"/>
+  <path d="M179 593h386v34H179z" fill="#A7D7D1"/>
+  <path d="M249 374h39v173h-39zm112 0h39v173h-39zm112 0h39v173h-39z" fill="#68AAA9"/>
+  <path d="M305 262h134" stroke="#68AAA9" stroke-linecap="round" stroke-width="13"/>
+  <rect x="549" y="221" width="425" height="282" rx="30" fill="url(#card)" stroke="#FFF5D8" stroke-width="7"/>
+  <path d="M580 291h363" stroke="#FFF8E9" stroke-opacity=".75" stroke-width="4"/>
+  <rect x="589" y="332" width="71" height="48" rx="9" fill="#DDA344"/>
+  <path d="M604 348h41m-41 15h41" stroke="#FFF2D0" stroke-linecap="round" stroke-width="5"/>
+  <circle cx="868" cy="397" r="39" fill="#F9D280"/>
+  <circle cx="899" cy="397" r="39" fill="#E99950" fill-opacity=".85"/>
+  <path d="M598 436h118m-118 27h74" stroke="#A96D38" stroke-linecap="round" stroke-width="9"/>
+  <path d="m671 584 65-65 59 39 106-125" stroke="#9DE8D5" stroke-linecap="round" stroke-linejoin="round" stroke-width="13"/>
+  <path d="M883 433h18v18" stroke="#9DE8D5" stroke-linecap="round" stroke-linejoin="round" stroke-width="13"/>
+  <circle cx="671" cy="584" r="12" fill="#9DE8D5"/>
+  <circle cx="736" cy="519" r="12" fill="#9DE8D5"/>
+  <circle cx="795" cy="558" r="12" fill="#9DE8D5"/>
+</svg>

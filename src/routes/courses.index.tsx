@@ -8,9 +8,9 @@ export const Route = createFileRoute("/courses/")({
   head: () => ({
     meta: [
       { title: "All Courses — Skill Hub, Chennai" },
-      { name: "description", content: "Full course list at Skill Hub: AI digital marketing, website development, graphic design & video editing, corporate PPT design, Office Secretaryship, medical coding and fire & safety officer training." },
+      { name: "description", content: "Explore Skill Hub courses: cyber security, CPBFI, banking and finance, medical coding, Montessori teacher training, digital marketing, web development and more." },
       { property: "og:title", content: "All Courses — Skill Hub, Chennai" },
-      { property: "og:description", content: "7 running skill courses plus new batches coming soon. Offline & online, 3–6 months, placement assistance." },
+      { property: "og:description", content: "Explore all Skill Hub career courses, including cyber security, CPBFI, banking and finance, medical coding and Montessori teacher training." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -42,7 +42,7 @@ function CoursesPage() {
             <span className="bg-clip-text text-transparent" style={{ backgroundImage: "var(--gradient-hero)" }}>Skill Hub</span>
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground">
-            Seven job-oriented programmes running now, plus new batches launching soon. Offline & online, regular & weekend, 3–6 months.
+            Explore {courses.length} job-oriented programmes, including cyber security, banking and finance, medical coding and Montessori teacher training.
           </p>
           <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="mt-8 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-primary-foreground" style={{ background: "var(--gradient-primary)", boxShadow: "var(--shadow-elegant)" }}>
             <Phone className="h-4 w-4" /> Call / WhatsApp {site.phone}
