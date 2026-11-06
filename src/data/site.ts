@@ -7,7 +7,7 @@ import cMedicalCoding from "@/assets/c-medical-coding.jpg";
 import cFireSafety from "@/assets/c-fire-safety.png";
 import cCyberSecurity from "@/assets/c-cyber-security.jpg";
 import cCpbfI from "@/assets/c-cpbfi.jpg";
-import cBankingFinance from "@/assets/c-banking-finance.jpg";
+import cGoldLoan from "@/assets/c-gold-loan.jpg";
 import cMontessori from "@/assets/c-montessori.jpg";
 
 export const site = {
@@ -20,6 +20,14 @@ export const site = {
   website: "http://bharathiskillhub.com",
   address: "29 GNG, Colony, 2nd St, Varadaraja Puram, Ambattur, Chennai – 600 053",
 };
+
+const featuredCourseSlugs = [
+  "cyber-security",
+  "cpbfi-banking-finance-insurance",
+  "gold-loan-management",
+  "medical-coding",
+  "montessori-teacher-training",
+];
 
 export const courses = [
   {
@@ -154,25 +162,25 @@ export const courses = [
     topics: ["Banking", "Finance", "Insurance", "Customer Service"],
   },
   {
-    title: "Banking & Finance",
-    slug: "banking-finance",
+    title: "Gold Loan Management",
+    slug: "gold-loan-management",
     fee: "Contact us",
     syllabus: [
-      "Banking operations and services",
-      "Financial products and payments",
-      "Introduction to lending and credit",
-      "Customer onboarding and documentation",
-      "Digital banking fundamentals",
-      "Professional communication and service",
+      "Gold loan products and lending fundamentals",
+      "Gold jewellery identification and valuation basics",
+      "Customer onboarding and KYC documentation",
+      "Loan application processing and disbursement workflow",
+      "Repayment, renewals and account servicing",
+      "Customer communication and responsible service",
     ],
-    jobs: ["Banking Operations Assistant", "Finance Executive", "Loan Processing Assistant", "Customer Service Associate"],
+    jobs: ["Gold Loan Associate", "Loan Operations Assistant", "Customer Service Executive", "Gold Valuation Trainee"],
     eligibility: ["Contact us for eligibility details"],
-    ta: "வங்கி & நிதி",
-    img: cBankingFinance,
+    ta: "தங்க நகை கடன் மேலாண்மை",
+    img: cGoldLoan,
     duration: "Contact us",
     mode: "Offline & Online",
-    desc: "Learn the fundamentals of banking operations, financial products, digital payments and customer service.",
-    topics: ["Banking Operations", "Financial Products", "Digital Payments", "Customer Service"],
+    desc: "Learn gold loan processing, jewellery valuation fundamentals, customer documentation and responsible loan servicing.",
+    topics: ["Gold Valuation Basics", "Loan Processing", "KYC & Documentation", "Customer Service"],
   },
   {
     title: "Montessori Teacher Training",
@@ -209,4 +217,9 @@ export const courses = [
     desc: "Industrial safety, fire fighting drills, risk assessment, first aid and HSE documentation for site roles.",
     topics: ["Fire Fighting Drills", "Risk Assessment", "First Aid", "HSE Reports"],
   },
-];
+].sort((a, b) => {
+  const aPriority = featuredCourseSlugs.indexOf(a.slug);
+  const bPriority = featuredCourseSlugs.indexOf(b.slug);
+  return (aPriority === -1 ? featuredCourseSlugs.length : aPriority) -
+    (bPriority === -1 ? featuredCourseSlugs.length : bPriority);
+});

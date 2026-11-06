@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Job-oriented skill courses in Ambattur, Chennai: digital marketing, web development, cyber security, banking and finance, medical coding, Montessori teacher training and more. 100% placement assistance.",
+          "Job-oriented skill courses in Ambattur, Chennai: digital marketing, web development, cyber security, CPBFI, gold loan management, medical coding, Montessori teacher training and more. 100% placement assistance.",
       },
       { property: "og:title", content: "Skill Hub — Skill-Based Career Courses in Chennai" },
       { property: "og:description", content: "Offline & online batches, 3–6 months, live project internship, industry-recognized certificate and 100% placement assistance. Admissions open now." },
