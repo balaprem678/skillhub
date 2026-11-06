@@ -5,10 +5,10 @@ import cPpt from "@/assets/c-ppt.jpg";
 import cOffice from "@/assets/c-office.jpg";
 import cMedicalCoding from "@/assets/c-medical-coding.jpg";
 import cFireSafety from "@/assets/c-fire-safety.png";
-import cCyberSecurity from "@/assets/c-cyber-security.svg";
-import cCpbfI from "@/assets/c-cpbfi.svg";
-import cBankingFinance from "@/assets/c-banking-finance.svg";
-import cMontessori from "@/assets/c-montessori.svg";
+import cCyberSecurity from "@/assets/c-cyber-security.jpg";
+import cCpbfI from "@/assets/c-cpbfi.jpg";
+import cBankingFinance from "@/assets/c-banking-finance.jpg";
+import cMontessori from "@/assets/c-montessori.jpg";
 
 export const site = {
   name: "Skill Hub",
@@ -110,7 +110,14 @@ export const courses = [
     title: "Cyber Security",
     slug: "cyber-security",
     fee: "Contact us",
-    syllabus: ["Cybersecurity fundamentals", "Network security basics", "Threats and vulnerability awareness", "Security tools and monitoring concepts", "Ethical security testing fundamentals", "Incident response and security best practices"],
+    syllabus: [
+      "Cybersecurity fundamentals",
+      "Network security basics",
+      "Threats and vulnerability awareness",
+      "Security tools and monitoring concepts",
+      "Ethical security testing fundamentals",
+      "Incident response and security best practices",
+    ],
     jobs: ["Cybersecurity Analyst", "SOC Analyst", "Information Security Assistant"],
     eligibility: ["Contact us for eligibility details"],
     ta: "சைபர் செக்யூரிட்டி",
@@ -124,8 +131,20 @@ export const courses = [
     title: "CPBFI — Banking, Finance & Insurance",
     slug: "cpbfi-banking-finance-insurance",
     fee: "Contact us",
-    syllabus: ["Banking and financial services fundamentals", "Introduction to insurance products", "Customer service and communication", "Financial product awareness", "Banking documentation and processes", "Professional and workplace skills"],
-    jobs: ["Banking Associate", "Financial Services Executive", "Insurance Associate", "Customer Relationship Executive"],
+    syllabus: [
+      "Banking and financial services fundamentals",
+      "Introduction to insurance products",
+      "Customer service and communication",
+      "Financial product awareness",
+      "Banking documentation and processes",
+      "Professional and workplace skills",
+    ],
+    jobs: [
+      "Banking Associate",
+      "Financial Services Executive",
+      "Insurance Associate",
+      "Customer Relationship Executive",
+    ],
     eligibility: ["Contact us for eligibility details"],
     ta: "சிபிஎஃப்பிஐ — வங்கி, நிதி & காப்பீடு",
     img: cCpbfI,
@@ -138,7 +157,14 @@ export const courses = [
     title: "Banking & Finance",
     slug: "banking-finance",
     fee: "Contact us",
-    syllabus: ["Banking operations and services", "Financial products and payments", "Introduction to lending and credit", "Customer onboarding and documentation", "Digital banking fundamentals", "Professional communication and service"],
+    syllabus: [
+      "Banking operations and services",
+      "Financial products and payments",
+      "Introduction to lending and credit",
+      "Customer onboarding and documentation",
+      "Digital banking fundamentals",
+      "Professional communication and service",
+    ],
     jobs: ["Banking Operations Assistant", "Finance Executive", "Loan Processing Assistant", "Customer Service Associate"],
     eligibility: ["Contact us for eligibility details"],
     ta: "வங்கி & நிதி",
@@ -152,7 +178,14 @@ export const courses = [
     title: "Montessori Teacher Training",
     slug: "montessori-teacher-training",
     fee: "Contact us",
-    syllabus: ["Child development and early learning", "Montessori philosophy and principles", "Practical life learning activities", "Sensorial materials and classroom use", "Language and numeracy foundations", "Classroom planning and observation"],
+    syllabus: [
+      "Child development and early learning",
+      "Montessori philosophy and principles",
+      "Practical life learning activities",
+      "Sensorial materials and classroom use",
+      "Language and numeracy foundations",
+      "Classroom planning and observation",
+    ],
     jobs: ["Montessori Teacher", "Preschool Teacher", "Early Childhood Educator", "Classroom Assistant"],
     eligibility: ["Contact us for eligibility details"],
     ta: "மாண்டிசோரி ஆசிரியர் பயிற்சி",
