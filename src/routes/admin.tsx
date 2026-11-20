@@ -91,7 +91,7 @@ function AdminLayout() {
         <div className="flex h-16 items-center justify-between border-b border-slate-800 px-6">
           <Link to="/admin" className="flex items-center gap-2.5">
             <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-teal-500 to-teal-700 text-white shadow-lg shadow-teal-500/20">
-              <GraduationCap className="h-5 w-5" />
+              <img src="/logo.png" alt="SkillHub Logo" className="h-6 w-6" />
             </span>
             <div>
               <span className="font-display font-bold text-base tracking-tight text-white">SkillHub</span>
@@ -107,11 +107,10 @@ function AdminLayout() {
               <Link
                 key={item.href}
                 to={item.href}
-                className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all ${
-                  active
+                className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all ${active
                     ? "bg-teal-500/15 font-semibold text-teal-400 border border-teal-500/30"
                     : "text-slate-400 hover:bg-slate-800/60 hover:text-slate-200"
-                }`}
+                  }`}
               >
                 <item.icon className={`h-5 w-5 ${active ? "text-teal-400" : "text-slate-400"}`} />
                 {item.label}
@@ -147,7 +146,7 @@ function AdminLayout() {
             <div>
               <div className="flex items-center justify-between border-b border-slate-800 pb-4">
                 <div className="flex items-center gap-2">
-                  <GraduationCap className="h-6 w-6 text-teal-400" />
+                  <img src="/logo.png" alt="SkillHub Logo" className="h-6 w-6" />
                   <span className="font-bold text-white">SkillHub Admin</span>
                 </div>
                 <button onClick={() => setMobileOpen(false)} className="rounded-lg p-1 text-slate-400 hover:text-white">

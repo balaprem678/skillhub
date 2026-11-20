@@ -101,7 +101,7 @@ function AdminDashboardOverview() {
       </div>
 
       {/* QUICK ACTIONS & NOTIFICATION BANNER */}
-      <div className="grid gap-6 lg:grid-cols-3">
+      {/* <div className="grid gap-6 lg:grid-cols-3">
         <div className="rounded-2xl border border-teal-500/30 bg-gradient-to-br from-teal-950/40 via-slate-900 to-slate-900 p-6 shadow-xl lg:col-span-2">
           <div className="flex items-start gap-4">
             <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-teal-500/20 text-teal-400">
@@ -156,7 +156,7 @@ function AdminDashboardOverview() {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* RECENT ENQUIRIES TABLE */}
       <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-xl">

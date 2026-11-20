@@ -4,6 +4,7 @@ import {
   Search, Filter, Download, Trash2, Edit3, X, Check, Phone, Calendar, BookOpen, Clock, MessageSquare, AlertCircle
 } from "lucide-react";
 import { getEnquiriesFn, updateEnquiryStatusFn, deleteEnquiryFn } from "@/lib/api";
+import { courses } from "@/data/site";
 
 export const Route = createFileRoute("/admin/enquiries")({
   component: AdminEnquiriesModule,
@@ -20,11 +21,21 @@ interface EnquiryItem {
   createdAt: string | Date;
 }
 
+function getLocalDateValue(value: string | Date) {
+  const date = new Date(value);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 function AdminEnquiriesModule() {
   const [loading, setLoading] = useState(true);
   const [enquiries, setEnquiries] = useState<EnquiryItem[]>([]);
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
+  const [courseFilter, setCourseFilter] = useState("");
+  const [dateFilter, setDateFilter] = useState("");
 
   // Modal State
   const [selectedEnquiry, setSelectedEnquiry] = useState<EnquiryItem | null>(null);
@@ -53,6 +64,15 @@ function AdminEnquiriesModule() {
   useEffect(() => {
     fetchEnquiries();
   }, [search, statusFilter]);
+
+  const normalizeCourseName = (course: string) =>
+    course.trim().toLocaleLowerCase().replace(/[–—]/g, "-");
+  const filteredEnquiries = enquiries.filter((enquiry) => {
+    const matchesCourse =
+      !courseFilter || normalizeCourseName(enquiry.course) === normalizeCourseName(courseFilter);
+    const matchesDate = !dateFilter || getLocalDateValue(enquiry.createdAt) === dateFilter;
+    return matchesCourse && matchesDate;
+  });
 
   const handleOpenEdit = (e: EnquiryItem) => {
     setSelectedEnquiry(e);
@@ -99,9 +119,9 @@ function AdminEnquiriesModule() {
   };
 
   const handleExportCSV = () => {
-    if (enquiries.length === 0) return;
+    if (filteredEnquiries.length === 0) return;
     const headers = ["ID", "Full Name", "Phone", "Course", "Mode", "Status", "Notes", "Created At"];
-    const rows = enquiries.map((e) => [
+    const rows = filteredEnquiries.map((e) => [
       e.id,
       `"${e.fullName.replace(/"/g, '""')}"`,
       `"${e.phone}"`,
@@ -152,7 +172,7 @@ function AdminEnquiriesModule() {
 
         <button
           onClick={handleExportCSV}
-          disabled={enquiries.length === 0}
+          disabled={filteredEnquiries.length === 0}
           className="inline-flex items-center gap-2 self-start rounded-xl border border-slate-700 bg-slate-800 px-4 py-2.5 text-xs font-semibold text-slate-200 hover:bg-slate-700 hover:text-white transition-all disabled:opacity-50"
         >
           <Download className="h-4 w-4 text-teal-400" /> Export CSV
@@ -166,7 +186,7 @@ function AdminEnquiriesModule() {
       )}
 
       {/* FILTER & SEARCH BAR */}
-      <div className="flex flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-900 p-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-col gap-4 rounded-2xl border border-slate-800 bg-slate-900 p-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="relative flex-1">
           <Search className="absolute left-3.5 top-3 h-4 w-4 text-slate-500" />
           <input
@@ -178,13 +198,16 @@ function AdminEnquiriesModule() {
           />
         </div>
 
-        <div className="flex items-center gap-2">
-          <Filter className="h-4 w-4 text-slate-400" />
-          <span className="text-xs font-semibold text-slate-400">Filter:</span>
+        <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="flex items-center gap-2">
+            <Filter className="h-4 w-4 text-slate-400" />
+            <span className="text-xs font-semibold text-slate-400">Filter:</span>
+          </div>
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="rounded-xl border border-slate-800 bg-slate-950 px-3 py-2 text-xs font-semibold text-teal-400 outline-none focus:border-teal-500"
+            aria-label="Filter enquiries by status"
+            className="w-full rounded-xl border border-slate-800 bg-slate-950 px-3 py-2 text-xs font-semibold text-teal-400 outline-none focus:border-teal-500 sm:w-44"
           >
             <option value="All">All Statuses</option>
             <option value="New">New Leads</option>
@@ -192,6 +215,43 @@ function AdminEnquiriesModule() {
             <option value="Enrolled">Enrolled</option>
             <option value="Closed">Closed</option>
           </select>
+          <label className="flex min-w-0 flex-col gap-1 text-xs font-semibold text-slate-400 sm:flex-row sm:items-center sm:gap-2">
+            <span>Course:</span>
+            <select
+              value={courseFilter}
+              onChange={(e) => setCourseFilter(e.target.value)}
+              className="w-full min-w-0 rounded-xl border border-slate-800 bg-slate-950 px-3 py-2 text-xs font-semibold text-teal-400 outline-none focus:border-teal-500 sm:w-64"
+            >
+              <option value="">All Courses</option>
+              {courses.map((course) => (
+                <option key={course.slug} value={course.title}>
+                  {course.title}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="flex min-w-0 flex-col gap-1 text-xs font-semibold text-slate-400 sm:flex-row sm:items-center sm:gap-2">
+            <span className="flex items-center gap-1.5">
+              <Calendar className="h-3.5 w-3.5" />
+              Date:
+            </span>
+            <input
+              type="date"
+              value={dateFilter}
+              onChange={(e) => setDateFilter(e.target.value)}
+              aria-label="Filter enquiries by date"
+              className="w-full min-w-0 rounded-xl border border-slate-800 bg-slate-950 px-3 py-2 text-xs font-semibold text-teal-400 outline-none focus:border-teal-500 [color-scheme:dark] sm:w-40"
+            />
+          </label>
+          {dateFilter && (
+            <button
+              type="button"
+              onClick={() => setDateFilter("")}
+              className="self-start rounded-lg px-2 py-1 text-xs font-semibold text-slate-400 hover:text-white sm:self-auto"
+            >
+              Clear date
+            </button>
+          )}
         </div>
       </div>
 
@@ -199,7 +259,7 @@ function AdminEnquiriesModule() {
       <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-xl">
         {loading ? (
           <div className="py-16 text-center text-xs text-slate-400">Loading enquiries...</div>
-        ) : enquiries.length === 0 ? (
+        ) : filteredEnquiries.length === 0 ? (
           <div className="py-16 text-center">
             <AlertCircle className="mx-auto h-8 w-8 text-slate-600" />
             <p className="mt-2 text-xs font-semibold text-slate-400">No matching enquiries found.</p>
@@ -220,7 +280,7 @@ function AdminEnquiriesModule() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800/80 text-slate-200">
-                {enquiries.map((e) => (
+                {filteredEnquiries.map((e) => (
                   <tr key={e.id} className="hover:bg-slate-800/40">
                     <td className="py-4 px-4 font-semibold text-white">{e.fullName}</td>
                     <td className="py-4 px-4">
